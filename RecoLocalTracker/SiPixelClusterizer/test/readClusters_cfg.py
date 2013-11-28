@@ -60,19 +60,12 @@ process.MessageLogger = cms.Service("MessageLogger",
 )
 
 process.source = cms.Source("PoolSource",
-<<<<<<< HEAD
-  fileNames = cms.untracked.vstring(    
-#  "/store/data/Run2011A/Commissioning/RECO/PromptReco-v1/000/160/497/102891A0-7250-E011-8061-0030487C90D4.root",
-# R 187446
-"/store/data/Commissioning12/MinimumBias/RECO/PromptReco-v1/000/187/446/FE7B607F-D76D-E111-993E-003048D37538.root",
-=======
   fileNames = cms.untracked.vstring(
 #   'file:/user/aolbrech/TrackTrigger_6XX/CMSSW_6_2_0_SLHC2/src/4400_FourMuPt1_200_UPG2023_BE5D+FourMuPt1_200_UPG2023_BE5D+RECOUP23_BE5D/step2_500Evts_ChannelTreshold10000.root'
 'file:/user/aolbrech/TrackTrigger_6XX/CMSSW_6_2_0_SLHC2/src/4400_FourMuPt1_200_UPG2023_BE5D+FourMuPt1_200_UPG2023_BE5D+RECOUP23_BE5D/step2_500Evts.root'
 #  "/store/data/Run2011A/Commissioning/RECO/PromptReco-v1/000/160/497/102891A0-7250-E011-8061-0030487C90D4.root",
 # R 187446
 #"/store/data/Commissioning12/MinimumBias/RECO/PromptReco-v1/000/187/446/FE7B607F-D76D-E111-993E-003048D37538.root",
->>>>>>> 7e951f512c927472a3d9140acf64d8826540b39e
 
   )
 
@@ -90,13 +83,9 @@ process.TFileService = cms.Service("TFileService",
     fileName = cms.string('histo.root')
 )
 
-<<<<<<< HEAD
-process.load("Configuration.StandardSequences.Geometry_cff")
-=======
 #process.load("Configuration.StandardSequences.Geometry_cff")
 process.load('Configuration.Geometry.GeometryExtendedPhase2TkBE5DReco_cff')
 process.load('Configuration.Geometry.GeometryExtendedPhase2TkBE5D_cff')
->>>>>>> 7e951f512c927472a3d9140acf64d8826540b39e
 process.load("Configuration.StandardSequences.MagneticField_38T_cff")
 
 # what is this?
@@ -108,10 +97,6 @@ process.load("Configuration.StandardSequences.MagneticField_38T_cff")
 # needed for global transformation
 # process.load("Configuration.StandardSequences.FakeConditions_cff")
 
-<<<<<<< HEAD
-process.load("Configuration.StandardSequences.FrontierConditions_GlobalTag_cff")# Choose the global tag here:
-process.GlobalTag.globaltag = "GR_P_V28::All"
-=======
 #From SLHCUpgradeSimulations/L1TrackTrigger/test/TenMuPt_0_50_ExtendedPhase2TkBE5D_50_GEN_SIM_cfg.py:
 process.load("Configuration.StandardSequences.FrontierConditions_GlobalTag_cff")
 from Configuration.AlCa.GlobalTag import GlobalTag
@@ -120,7 +105,6 @@ process.GlobalTag = GlobalTag(process.GlobalTag, 'auto:upgradePLS3', '')
 #process.load("Configuration.StandardSequences.FrontierConditions_GlobalTag_cff")# Choose the global tag here:
 #process.GlobalTag.globaltag = "START62_V1::All"
 #process.GlobalTag.globaltag = "GR_P_V28::All"
->>>>>>> 7e951f512c927472a3d9140acf64d8826540b39e
 # 2011
 # process.GlobalTag.globaltag = "GR_P_V20::All"
 #  process.GlobalTag.globaltag = "GR_R_311_V2::All"
@@ -130,25 +114,15 @@ process.GlobalTag = GlobalTag(process.GlobalTag, 'auto:upgradePLS3', '')
 # OK for 2009 LHC data
 #process.GlobalTag.globaltag = 'CRAFT09_R_V4::All'
 
-<<<<<<< HEAD
-process.analysis = cms.EDAnalyzer("ReadPixClusters",
-=======
 process.analysis = cms.EDAnalyzer("ReadPixClusters_DifferentGeometry",
->>>>>>> 7e951f512c927472a3d9140acf64d8826540b39e
     Verbosity = cms.untracked.bool(True),
     src = cms.InputTag("siPixelClusters"),
 )
 
 #process.p = cms.Path(process.hltfilter*process.analysis)
-<<<<<<< HEAD
-process.p = cms.Path(process.hltPhysicsDeclared*process.hltfilter*process.analysis)
-#process.p = cms.Path(process.hltPhysicsDeclared*process.analysis)
-#process.p = cms.Path(process.analysis)
-=======
 #process.p = cms.Path(process.hltPhysicsDeclared*process.hltfilter*process.analysis)
 #process.p = cms.Path(process.hltPhysicsDeclared*process.analysis)
 process.p = cms.Path(process.analysis)
->>>>>>> 7e951f512c927472a3d9140acf64d8826540b39e
 
 
 # define an EndPath to analyze all other path results

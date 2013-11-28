@@ -138,10 +138,6 @@ void ReadPixClusters_DifferentGeometry::analyze(const edm::Event& e, const edm::
 
   const edmNew::DetSetVector<SiPixelCluster>& ClusterCollection = *clusters;     
   int sizeOfClusterCollection = ClusterCollection.size();
-
-  std::cout << " ******************************************************************* " << std::endl;
-  std::cout << " **** Looking at Different geometry test                         *** " << std::endl;
-  std::cout << " ******************************************************************** " << std::endl;
   
   if(printLocal) cout<<"run "<<run<<" event "<<event<<" bx "<<bx<<" lumi "<<lumiBlock<<" orbit "<<orbit<<" "<<sizeOfClusterCollection<<endl;  
 
