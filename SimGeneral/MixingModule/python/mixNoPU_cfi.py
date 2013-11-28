@@ -11,12 +11,20 @@ from SimGeneral.MixingModule.ecalDigitizer_cfi import *
 from SimGeneral.MixingModule.hcalDigitizer_cfi import *
 from SimGeneral.MixingModule.castorDigitizer_cfi import *
 from SimGeneral.MixingModule.trackingTruthProducer_cfi import *
+<<<<<<< HEAD
+=======
+from SimTracker.SiPhase2Digitizer.phase2PixelDigitizer_cfi import *
+>>>>>>> 7e951f512c927472a3d9140acf64d8826540b39e
 
 
 mix = cms.EDProducer("MixingModule",
     digitizers = cms.PSet(
       pixel = cms.PSet(
+<<<<<<< HEAD
         pixelDigitizer
+=======
+        phase2PixelDigitizer
+>>>>>>> 7e951f512c927472a3d9140acf64d8826540b39e
       ),
       strip = cms.PSet(
 	stripDigitizer
